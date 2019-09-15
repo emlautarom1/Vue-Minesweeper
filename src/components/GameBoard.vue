@@ -1,14 +1,18 @@
 <template>
-    <div class="board">
-        <table>
-            <tr class="row" v-for="(row, i) in board.cells" :key="i">
-                <td v-for="(cell, j) in row" @click="onCellClick(cell)" @contextmenu.prevent="onCellFlag(cell)"
-                    :key="j">
-                    <BoardCell :cell="cell"/>
-                </td>
-            </tr>
-        </table>
-    </div>
+  <div class="board">
+    <table>
+      <tr class="row" v-for="(row, i) in board.cells" :key="i">
+        <td
+          v-for="(cell, j) in row"
+          @click="onCellClick(cell)"
+          @contextmenu.prevent="onCellFlag(cell)"
+          :key="j"
+        >
+          <BoardCell :cell="cell" />
+        </td>
+      </tr>
+    </table>
+  </div>
 </template>
 
 <script>
@@ -61,14 +65,15 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-    table {
-        border: solid 2px black;
-        border-collapse: collapse;
-        margin: 20px 0;
-    }
+table {
+  border: solid 2px black;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
 
-    td, tr {
-        margin: 0;
-        padding: 0;
-    }
+td,
+tr {
+  margin: 0;
+  padding: 0;
+}
 </style>
